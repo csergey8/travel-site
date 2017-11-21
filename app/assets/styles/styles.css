@@ -1,10 +1,7 @@
-$mainBlue: #2f5572;
+@import "normalize.css";
+@import "base/_global";
+@import "modules/_large-hero";
 
 
-body {
-    color: $mainBlue;
-    columns: 300px 2;
-    p {
-        font-weight: 100;
-    }
-}
+
+
