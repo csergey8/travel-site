@@ -463,6 +463,8 @@ img {
 .wrapper {
     padding-left: 18px;
     padding-right: 18px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .large-hero {
@@ -577,3 +579,12 @@ img {
       font-size: 1.25rem
   }
   }
+
+.page-section {
+    padding: 4.5rem 0;
+}
+
+.page-section--blue {
+        background-color: #2f5572;
+        color: #FFF;
+    }
