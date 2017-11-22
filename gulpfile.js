@@ -1,48 +1,11 @@
-
-var gulp = require('gulp');
-var watch = require('gulp-watch');
-var postcss = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
-var cssvars = require('postcss-simple-vars');
-var nested = require('postcss-nested');
-var cssImport = require('postcss-import');
-var browserSync = require('browser-sync').create();
-
-gulp.task('default', function(){
-    console.log('!!!')
-});
-
-gulp.task('html', function(){
-
-});
-
-gulp.task('styles', function(){
-    return gulp.src('./app/assets/styles/styles.css')
-    .pipe(postcss([cssImport, nested, cssvars, autoprefixer]))
-    .pipe(gulp.dest('./app/temp/styles'));
-});
-
-gulp.task('watch', function() {
-
-    browserSync.init({
-        server: {
-            baseDir: "app"
-        },
-        notify: false
-    });
-
-    watch('./app/index.html', function() {
-        browserSync.reload();
-    });
-
-    watch('./app/assets/styles/**/*.css', function() {
-        gulp.start('cssInject');
-    });
-
-});
+require('./gulp/tasks/styles');
+require('./gulp/tasks/watch');
 
 
-gulp.task('cssInject', ['styles'], function() {
-    return gulp.src('./app/temp/styles/styles.css')
-    .pipe(browserSync.stream());
-});
+
+
+
+
+
+
+
